@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+     <div id="top">
+        <form action="">
+        
+            <input type="text" name="" id="not" class="pp" style="font-size: 20px; height: 50px;" ><br>
+    <input type="button" class="mybox" onclick="lock('7')" value="7">
+    <input type="button" class="mybox" onclick="lock('8')" value="8">
+    <input type="button" class="mybox" onclick="lock('9')" value="9">
+    <input type="button" onclick="lock('+')" class="mybox" value="+"><br>
+    <input type="button" class="mybox" onclick="lock('4')" value="4">
+    <input type="button" class="mybox" onclick="lock('5')" value="5">
+    <input type="button" class="mybox" onclick="lock('6')" value="6">
+    <input type="button" class="mybox" onclick="lock('-')" value="-"><br>
+    <input type="button" class="mybox" onclick="lock('1')" value="1">
+    <input type="button" class="mybox" onclick="lock('2')" value="2">
+    <input type="button" class="mybox" onclick="lock('3')" value="3">
+    <input type="button" class="mybox" onclick="lock('/')" value="/"><br>
+    <input type="button" class="mybox" onclick="lock('0')" value="0">
+    <input type="button" class="mybox" onclick="pc()" value="=">
+    <input class="mybox" type="button" onclick="cleardisplay()" value="ca">
+    <input class="mybox" type="button" onclick="lock('*')" value="*"><br>
+        </form>
+        <script>
+        
+            const disk=document.getElementById('not');
+        function lock(val){
+            
+         let lop=new SpeechSynthesisUtterance(disk.value+=val);
+                window.speechSynthesis.speak(lop)
+        }
+        function cleardisplay(){
+            disk.value='';
+
+        }
+        function pc(){
+            try{
+                disk.value=eval(disk.value);
+         let lop=new SpeechSynthesisUtterance('the answer is'+disk.value);
+                window.speechSynthesis.speak(lop)
+                
+            }
+            catch(error){
+                disk.value='error';
+            }
+             function phd(){
+                let tests=document.getElementById('lock').value;
+
+            }
+        }
+    </script>
+<style>
+    #calcu{
+    border: 2px solid green;
+    width: 360px;
+    height: 500px;
+    background-color: black;
+    margin-left:400px ;
+    margin-top:-520px ;
+}
+.teems{
+    margin: 5px;
+    width: 335px;
+    height: 50px;
+    border: none;
+    
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.mybut{
+    width: 80px;
+    height: 60px;
+    font-size: 25px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-radius: 1000px;
+    margin-left: 5px;
+    border: 1px solid black;
+}
+#box{
+    border: 2px solid rgb(79, 13, 233);
+    width: 360px;
+    height: 500px;
+    margin-left: 800px;
+    background-color:black;
+    margin-top: -860px;
+    overflow-y: scroll;
+}
+#speaker{
+    border: 2px solid green;
+    width: 360px;
+    height: 500px;
+    background-color:green;
+}
+#top{
+    border: 2px solid green;
+    width: 300px;
+    height: 400px;
+    background-color: rgb(0, 0, 0);
+}
+.mybox{
+      width: 60px;
+    height: 60px;
+    font-size: 20px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-radius: 1000px;
+    margin-left: 5px;
+    border: 1px solid black;    
+    background-color: orange;
+    color: white;
+}
+
+</style>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+    <div id="clocks">
+        <button onclick="myclocks()">button</button>
+     <script>
+        setInterval(myclocks,5000);
+        function myclocks(){
+    const date=new Date();
+            clo(date.toLocaleString());
+        let box=new SpeechSynthesisUtterance(date());
+                window.speechSynthesis.speak(box);
+            
+        }
+        function clo(works){
+            const names=document.getElementById('clocks');
+            names.innerHTML=works;
+        }
+        function spk(){
+            let texts=document.getElementById('clocks').value;
+        let box=new SpeechSynthesisUtterance(texts);
+                window.speechSynthesis.speak(box);
+        }
+     </script>
+    </div>
+
+
+    <br>
+    <br>
+    <br>
+    <br><br>
+    <br><br>
+    <div id="clock">
+        <button onclick="myclock()">button</button>
+     <script>
+        setInterval(myclock,1000);
+        function myclock(){
+    const date=new Date();
+            cl(date.toLocaleString());
+            
+        }
+        function cl(work){
+            const name=document.getElementById('clock');
+            name.innerHTML=work;
+        }
+     </script>
+    </div>
+
+
+
+    <br>
+    <br>
+
+    <br>
+    <br>
+    
+    
+    <input type="text" id="save">
+    <button onclick="test()">button</button>
+    <p id=" pag"></p>
+    <script>
+        setTimeout(test,5000)
+        function test(){
+            let all=document.getElementById('save').value;
+            document.getElementById('peg').innerHTML=all;
+        }
+    </script>
+    <br>
+    <br>
+    <br><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="box">
+        <input type="text" id="a_value" placeholder="Enter your a_value"><br>
+        <input type="text" name="" id="b_value" placeholder="Enter your b_value"><br>
+        <button onclick="fun()">button</button>
+        <p id="out1"></p>
+         <p id="out2"></p>
+         <p id="out3"></p>
+         <p id="out4"></p>
+         <p id="out5"></p>
+         <p id="out6"></p>
+         <p id="out7"></p>
+         <p id="out8"></p>
+         <p id="out9"></p>
+        <script>
+            function fun(){
+                let a=document.getElementById('a_value').value;
+                let b=document.getElementById('b_value').value;
+                document.getElementById('out1').innerHTML='step1:-a<sup>2</sup>+b<sup>2</sup>+2ab';
+                document.getElementById('out2').innerHTML='step2:-the  putting values in the formula';
+                document.getElementById('out3').innerHTML='step3:-('+a+')<sup>2</sup>'+'('+b+')<sup>2</sup>'+2+'('+a+')'+'('+b+')';
+
+                 document.getElementById('out4').innerHTML='step4:-('+a+')<sup>2</sup>+('+b+')<sup>2</sup>+2('+a*b+')';
+                 let result1=a*b;
+                 let result2=2*result1;
+                 document.getElementById('out5').innerHTML='step5:-('+a+')<sup>2</sup>+('+b+')<sup>2</sup>+'+result2;
+                  document.getElementById('out6').innerHTML='step6:- Aplying square root';
+                 let result3=a*a;
+                 let result4=b*b;
+                 document.getElementById('out7').innerHTML='step:-'+result3+'+'+result4+'+'+result2;
+                 let result5=result4+result2;
+                 let result6=result3+result5;
+                 document.getElementById('out8').innerHTML='step:-'+result3+'+'+result5;
+                 document.getElementById('out9').innerHTML='step:-'+result6;
+            } 
+        </script>
+    </div>
+    
+</body>
+</html>
